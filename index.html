@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f6f6f4" />
   
-  <title>Vipul Raokale — AI Systems & Multi-Cloud Engineer</title>
-  <meta name="description" content="Vipul Raokale is a Senior AI Systems & Multi-Cloud Engineer building production-grade AI applications, agentic workflows, custom RAG systems, and cloud infrastructure across AWS, Azure, and GCP." />
+  <title>Vipul Raokale — Senior AI Systems & Multi-Cloud Engineer</title>
+  <meta name="description" content="Vipul Raokale is a Senior AI Systems & Multi-Cloud Engineer building production-grade AI applications, agentic workflows, custom RAG systems, and multi-cloud infrastructure." />
   <meta name="author" content="Vipul Raokale" />
 
   <link rel="canonical" href="https://vipulraokale.in/" />
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome Icons for clean UI accents -->
+  <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Tailwind CSS CDN -->
@@ -68,7 +68,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Subtle Bento Grid Lines Illusion */
+    /* Bento Grid Layout */
     .bento-grid-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -87,16 +87,17 @@
       }
     }
 
-    /* Custom Card Hover Effects */
+    /* Bento Card Hover Animations */
     .bento-card {
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .bento-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      background-color: #ffffff;
     }
 
-    /* Pulse status dot */
+    /* Live Online Indicator */
     .status-dot {
       width: 8px;
       height: 8px;
@@ -132,23 +133,39 @@
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center space-x-8">
+      <nav class="hidden md:flex items-center space-x-6">
         <a href="#about" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">About</a>
         <a href="#skills" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">Skills</a>
         <a href="#experience" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">Experience</a>
         <a href="#contact" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">Contact</a>
-        <a href="#contact" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-brand-dark rounded hover:bg-black transition-colors">
-          Get in Touch
-        </a>
+        <div class="h-4 w-px bg-brand-border my-auto"></div>
+        <div class="flex items-center space-x-3">
+          <a id="nav-linkedin-desktop" href="https://www.linkedin.com/in/vipul-raokale" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-brand-muted hover:text-brand-dark transition-colors text-base">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a id="nav-instagram-desktop" href="https://www.instagram.com/_its_vipul23" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-brand-muted hover:text-brand-dark transition-colors text-base">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
       </nav>
 
-      <!-- Mobile Menu Toggle Button -->
-      <button id="menu-toggle" class="md:hidden text-brand-dark focus:outline-none p-2" aria-label="Toggle Navigation">
-        <i class="fa-solid fa-bars text-xl"></i>
-      </button>
+      <!-- Mobile Right Container with Icons & Menu Toggle -->
+      <div class="flex items-center space-x-4 md:hidden">
+        <div class="flex items-center space-x-3">
+          <a id="nav-linkedin-mobile" href="https://www.linkedin.com/in/vipul-raokale" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-brand-muted hover:text-brand-dark transition-colors text-lg">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a id="nav-instagram-mobile" href="https://www.instagram.com/_its_vipul23" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-brand-muted hover:text-brand-dark transition-colors text-lg">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <button id="menu-toggle" class="text-brand-dark focus:outline-none p-2" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
     </div>
 
-    <!-- Mobile Dropdown Navigation -->
+    <!-- Mobile Navigation Drawer -->
     <div id="mobile-menu" class="hidden md:hidden border-b border-brand-border bg-brand-bg px-6 py-4 flex flex-col space-y-4">
       <a href="#about" class="mobile-link text-sm font-medium text-brand-muted hover:text-brand-dark">About</a>
       <a href="#skills" class="mobile-link text-sm font-medium text-brand-muted hover:text-brand-dark">Skills</a>
@@ -157,14 +174,14 @@
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT CONTAINER -->
   <main class="max-w-6xl mx-auto px-6 flex-grow w-full">
 
     <section class="py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" id="about">
       <div class="lg:col-span-7 space-y-6">
         <div class="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-brand-muted uppercase">
           <span class="status-dot"></span>
-          <span>AI Systems & Multi-Cloud</span>
+          <span>— AI SYSTEMS & MULTI-CLOUD ENGINEER</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-tight">
@@ -172,20 +189,20 @@
         </h1>
 
         <p class="text-lg sm:text-xl text-brand-muted leading-relaxed max-w-2xl font-normal">
-          Building production-grade AI applications, agentic workflows, custom RAG systems, and cloud infrastructure across AWS, Azure, and GCP.
+          Building production-grade AI applications, agentic workflows, custom RAG systems, and multi-cloud infrastructure across AWS, Azure, and GCP.
         </p>
 
         <div class="pt-4 flex flex-wrap gap-4">
           <a href="#contact" class="px-6 py-3 bg-brand-dark text-white font-semibold text-sm rounded border border-brand-dark hover:bg-neutral-800 transition-all shadow-sm">
-            Initiate Collaboration
+            Get In Touch
           </a>
           <a href="#skills" class="px-6 py-3 bg-white text-brand-dark font-semibold text-sm rounded border border-brand-border hover:bg-neutral-100 transition-all">
-            Explore Stack
+            View Technical Stack
           </a>
         </div>
       </div>
 
-      <!-- Hero Profile Side Card -->
+      <!-- Hero Summary Card -->
       <div class="lg:col-span-5">
         <div class="bg-brand-card border border-brand-border rounded-lg p-8 shadow-sm space-y-5 relative">
           <div class="flex justify-between items-start border-b border-brand-border pb-4">
@@ -199,17 +216,18 @@
           </div>
 
           <p class="text-sm text-brand-muted leading-relaxed">
-            Over 5 years of engineering experience spanning multi-cloud infrastructure, LLM pipelines, microservices, and cross-platform applications.
+            Over 5 years of engineering experience delivering multi-cloud infrastructure, LLM pipelines, microservices, and cross-platform native applications.
           </p>
+
+          <div class="pt-2 flex items-center gap-2 text-xs font-mono text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded w-fit">
+            <span class="status-dot"></span>
+            <span>Available for Projects</span>
+          </div>
 
           <div class="pt-2 flex flex-col space-y-2 font-mono text-xs text-brand-dim">
             <div class="flex items-center gap-2">
               <i class="fa-regular fa-envelope text-brand-muted w-4"></i>
-              <a href="mailto:vipulraokale2399@gmail.com" class="hover:underline text-brand-dark">vipulraokale2399@gmail.com</a>
-            </div>
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-phone text-brand-muted w-4"></i>
-              <a href="tel:+918668591702" class="hover:underline text-brand-dark">+91 8668591702</a>
+              <a href="mailto:vipulcloudapps@gmail.com" class="hover:underline text-brand-dark">vipulcloudapps@gmail.com</a>
             </div>
           </div>
         </div>
@@ -218,129 +236,142 @@
 
     <section id="skills" class="py-16 border-t border-brand-border">
       <div class="mb-10">
-        <div class="font-mono text-xs tracking-widest text-brand-muted uppercase mb-2">// CAPABILITIES MATRIX</div>
+        <div class="font-mono text-xs tracking-widest text-brand-muted uppercase mb-2">// SKILLS</div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">Where the depth actually is.</h2>
       </div>
 
       <div class="bento-grid-container">
 
-        <!-- 1. AI Systems (Double-Height / Featured Card) -->
+        <!-- 1. AI Systems & LLMs (Featured Card) -->
         <div class="lg:row-span-2 bento-card bg-brand-card border border-brand-border rounded-lg p-8 flex flex-col justify-between">
           <div>
             <div class="w-12 h-12 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-xl mb-6 shadow-xs">
               <i class="fa-solid fa-brain"></i>
             </div>
             <span class="inline-block px-2.5 py-1 mb-3 bg-neutral-100 border border-neutral-200 text-brand-dark font-mono text-[10px] tracking-wider uppercase font-semibold rounded">
-              FEATURED CORE
+              FEATURED CAPABILITY
             </span>
-            <h3 class="text-2xl font-bold text-brand-dark tracking-tight mb-3">AI Systems</h3>
+            <h3 class="text-2xl font-bold text-brand-dark tracking-tight mb-3">AI Systems & LLMs</h3>
             <p class="text-sm text-brand-muted leading-relaxed mb-6">
-              Retrieval-augmented generation (RAG) and multi-agent systems designed for resilience, low latency, and enterprise accuracy in production.
+              Architecting production-grade retrieval-augmented generation (RAG) systems, prompt engineering frameworks, LLM evals, and agentic state machines with Azure OpenAI and AI Foundry.
             </p>
           </div>
-          <div class="flex flex-wrap gap-2 pt-4">
-            <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded">RAG</span>
-            <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded">PROMPT ENGINEERING</span>
-            <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded">EVALS</span>
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-brand-border/60">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">RAG SYSTEMS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">PROMPT ENGINEERING</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">EVALS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">LANGGRAPH / LANGCHAIN</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">AZURE OPENAI (AI FOUNDRY)</span>
           </div>
         </div>
 
-        <!-- 2. LLMs -->
-        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
-              <i class="fa-solid fa-comments"></i>
-            </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">LLMs</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Frontier model APIs and orchestration frameworks for scalable intelligence.</p>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">AZURE OPENAI</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">OPENAI</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">LANGCHAIN</span>
-          </div>
-        </div>
-
-        <!-- 3. Cloud -->
+        <!-- 2. Cloud Platforms -->
         <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
               <i class="fa-solid fa-cloud"></i>
             </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">Cloud</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Multi-cloud architecture across the three major hyperscale providers.</p>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Cloud Platforms</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Architecting, deploying, and managing multi-cloud infrastructure across major public cloud providers.</p>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">AWS</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">GCP</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">AZURE</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">AZURE</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">GCP</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">AWS</span>
           </div>
         </div>
 
-        <!-- 4. Agentic AI -->
+        <!-- 3. DevOps & Containers -->
         <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
-              <i class="fa-solid fa-diagram-project"></i>
+              <i class="fa-solid fa-cubes"></i>
             </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">Agentic AI</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Multi-agent workflows constructed as stateful graphs rather than linear prompts.</p>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">DevOps & Containers</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Automated deployment pipelines, container orchestration, and continuous integration workflows.</p>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">LANGGRAPH</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">CREWAI</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">FASTMCP</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">KUBERNETES (AKS)</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">DOCKER</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">HELM</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">AZURE DEVOPS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">GITHUB ACTIONS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">GITLAB CI</span>
           </div>
         </div>
 
-        <!-- 5. Infrastructure -->
+        <!-- 4. IaC & Automation -->
         <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
-              <i class="fa-solid fa-server"></i>
+              <i class="fa-solid fa-code-merge"></i>
             </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">Infrastructure</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Infrastructure as Code (IaC), containerization, and orchestration at scale.</p>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">IaC & Automation</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Declarative infrastructure management, automated cloud provisioning, and standardized frameworks.</p>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">TERRAFORM</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">DOCKER</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">KUBERNETES</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">TERRAFORM</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">ARM TEMPLATES</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">CAF FRAMEWORK</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">BASH / SHELL</span>
           </div>
         </div>
 
-        <!-- 6. DevOps -->
+        <!-- 5. Observability & Security -->
         <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
-              <i class="fa-solid fa-gears"></i>
+              <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">DevOps & FinOps</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">CI/CD pipelines and cloud cost optimization practices for sustainable shipping.</p>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Observability & Security</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Proactive telemetry, Application Insights, Log Analytics, and automated static code security analysis.</p>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">GITHUB ACTIONS</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">FINOPS</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">CLOUDOPS</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">APP INSIGHTS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">GRAFANA</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">PROMETHEUS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">LOG ANALYTICS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SONARQUBE</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">MEND / FORTIFY</span>
           </div>
         </div>
 
-        <!-- 7. Programming -->
+        <!-- 6. Scripting & Programming -->
         <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
               <i class="fa-solid fa-code"></i>
             </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">Programming</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Strong foundational polyglot languages for core application engineering.</p>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Scripting & Programming</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Core polyglot software engineering, object-oriented systems, and system-level scripting.</p>
           </div>
           <div class="flex flex-wrap gap-1.5">
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">PYTHON</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">JAVA</span>
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">C#</span>
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">TYPESCRIPT</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">JAVA</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SQL</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SHELL / YAML</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">JAVASCRIPT</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">C / C++</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">BASH</span>
+          </div>
+        </div>
+
+        <!-- 7. Web & Backend Frameworks -->
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between lg:col-span-2">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Web & Backend Frameworks</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Enterprise RESTful web microservices, scalable API gateways, and modern frontend application frameworks.</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FASTAPI</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">.NET CORE</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SPRING BOOT</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">REACT</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">NEXT.JS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">NODE.JS / EXPRESS</span>
           </div>
         </div>
 
@@ -348,69 +379,55 @@
         <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
-              <i class="fa-solid fa-mobile-screen"></i>
+              <i class="fa-solid fa-mobile-screen-button"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark mb-2">Mobile Engineering</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Cross-platform native apps designed for performance and reliable state.</p>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Cross-platform native applications and native Android app development with Play Store publishing experience.</p>
           </div>
           <div class="flex flex-wrap gap-1.5">
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FLUTTER</span>
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">DART</span>
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">REACT NATIVE</span>
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SWIFTUI</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">ANDROID APP DEVELOPMENT</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">PLAY STORE PUBLISHING</span>
           </div>
         </div>
 
-        <!-- 9. Web & Backends -->
-        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
-          <div>
-            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
-              <i class="fa-solid fa-[#000]"></i>
-              <i class="fa-solid fa-cubes"></i>
-            </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">Web & Backends</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">High-throughput microservices and responsive web platforms.</p>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">.NET CORE</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FASTAPI</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">REACT</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">NEXT.JS</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">NODE.JS</span>
-          </div>
-        </div>
-
-        <!-- 10. Databases -->
+        <!-- 9. Databases & Storage -->
         <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
               <i class="fa-solid fa-database"></i>
             </div>
             <h3 class="text-xl font-bold text-brand-dark mb-2">Databases & Storage</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Relational, document, and real-time cloud database storage systems.</p>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Relational, document, real-time, and cloud-native datastores for enterprise data architectures.</p>
           </div>
           <div class="flex flex-wrap gap-1.5">
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">POSTGRESQL</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">AZURE COSMOS DB</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">MONGODB ATLAS</span>
             <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SQL SERVER</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">MONGODB</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FIREBASE</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FIREBASE / SUPABASE</span>
           </div>
         </div>
 
-        <!-- 11. APIs & Integration -->
-        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between lg:col-span-2">
+        <!-- 10. APIs & Tooling -->
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
-              <i class="fa-solid fa-network-wired"></i>
+              <i class="fa-solid fa-plug"></i>
             </div>
-            <h3 class="text-xl font-bold text-brand-dark mb-2">APIs & Integrations</h3>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">Standardized contract definitions, gateways, and tooling for multi-service ecosystems.</p>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">APIs & Tooling</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">API design specifications, testing automation, issue tracking, and collaboration tooling.</p>
           </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">REST</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">GRAPHQL</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">OPENAPI</span>
-            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">POSTMAN</span>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">POSTMAN</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">GRAPHQL</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SWAGGER</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">JIRA</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SERVICENOW</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">CONFLUENCE</span>
           </div>
         </div>
 
@@ -425,7 +442,7 @@
 
       <div class="space-y-8">
         
-        <!-- Experience Item 1 -->
+        <!-- KPMG -->
         <div class="bg-brand-card border border-brand-border rounded-lg p-8 grid grid-cols-1 md:grid-cols-12 gap-6 shadow-sm">
           <div class="md:col-span-4 space-y-1">
             <h3 class="font-bold text-lg text-brand-dark">Consultant</h3>
@@ -434,14 +451,14 @@
           </div>
           <div class="md:col-span-8">
             <ul class="space-y-3 text-sm text-brand-muted list-disc list-inside">
-              <li class="leading-relaxed">Architect multi-cloud container infrastructures across AWS, Azure, and Google Cloud Platform.</li>
-              <li class="leading-relaxed">Engineer automated CI/CD deployment pipelines and provision enterprise infrastructure via Terraform.</li>
-              <li class="leading-relaxed">Integrate production LLM workflows, custom RAG applications, and AI assistant tools into client environments.</li>
+              <li class="leading-relaxed">Architect multi-cloud container infrastructures across Azure, AWS, and Google Cloud Platform.</li>
+              <li class="leading-relaxed">Engineer automated CI/CD deployment pipelines using Azure DevOps, GitLab CI, and Terraform.</li>
+              <li class="leading-relaxed">Integrate production LLM workflows, agentic AI frameworks (LangGraph, LangChain), and enterprise RAG systems with Azure OpenAI / AI Foundry.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Experience Item 2 -->
+        <!-- Infosys -->
         <div class="bg-brand-card border border-brand-border rounded-lg p-8 grid grid-cols-1 md:grid-cols-12 gap-6 shadow-sm">
           <div class="md:col-span-4 space-y-1">
             <h3 class="font-bold text-lg text-brand-dark">Associate Consultant</h3>
@@ -450,8 +467,8 @@
           </div>
           <div class="md:col-span-8">
             <ul class="space-y-3 text-sm text-brand-muted list-disc list-inside">
-              <li class="leading-relaxed">Spearheaded cloud migration strategies and automated microservice deployment for financial client systems.</li>
-              <li class="leading-relaxed">Built resilient CI/CD pipelines using GitLab CI and Azure DevOps to minimize deployment overhead.</li>
+              <li class="leading-relaxed">Spearheaded cloud migration strategies and containerized microservices deployments.</li>
+              <li class="leading-relaxed">Built automated CI/CD pipelines and IaC configurations to streamline deployment cycles for financial services clients.</li>
             </ul>
           </div>
         </div>
@@ -469,7 +486,7 @@
           </div>
 
           <p class="text-sm text-brand-muted leading-relaxed">
-            Whether you need custom AI agent integration, cloud infrastructure architecture, or full-stack platform development, feel free to drop a message.
+            Whether you need custom AI agent integration, multi-cloud architecture, or full-stack software development, feel free to reach out directly.
           </p>
 
           <div class="space-y-3 font-mono text-xs pt-2">
@@ -477,14 +494,7 @@
               <div class="w-8 h-8 rounded bg-white border border-brand-border flex items-center justify-center text-brand-dark">
                 <i class="fa-regular fa-envelope"></i>
               </div>
-              <a href="mailto:vipulraokale2399@gmail.com" class="text-brand-dark underline hover:opacity-80">vipulraokale2399@gmail.com</a>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded bg-white border border-brand-border flex items-center justify-center text-brand-dark">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-              <a href="tel:+918668591702" class="text-brand-dark underline hover:opacity-80">+91 8668591702</a>
+              <a href="mailto:vipulcloudapps@gmail.com" class="text-brand-dark underline hover:opacity-80">vipulcloudapps@gmail.com</a>
             </div>
           </div>
         </div>
@@ -503,7 +513,7 @@
 
             <div>
               <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-brand-muted mb-2">Message</label>
-              <textarea id="message" name="message" rows="4" required placeholder="Describe your project requirement or discussion topic..." class="w-full px-4 py-3 bg-white border border-brand-border rounded text-sm text-brand-dark focus:outline-none focus:border-brand-dark transition-colors"></textarea>
+              <textarea id="message" name="message" rows="4" required placeholder="Describe your requirement or discussion topic..." class="w-full px-4 py-3 bg-white border border-brand-border rounded text-sm text-brand-dark focus:outline-none focus:border-brand-dark transition-colors"></textarea>
             </div>
 
             <button type="submit" class="w-full py-3.5 bg-brand-dark text-white font-semibold text-sm rounded hover:bg-black transition-colors shadow-sm">
@@ -519,13 +529,12 @@
 
   <footer class="border-t border-brand-border py-8 text-center text-xs text-brand-dim font-mono">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p>© Vipul Raokale — AI Systems & Multi-Cloud Architecture.</p>
+      <p>© Vipul Raokale. AI Systems, Application Development & Multi-Cloud Architecture.</p>
       <p>Domain: <a href="https://vipulraokale.in" class="hover:underline text-brand-muted">vipulraokale.in</a></p>
     </div>
   </footer>
 
   <script>
-    // Mobile navigation toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
