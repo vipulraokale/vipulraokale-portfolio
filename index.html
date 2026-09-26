@@ -9,13 +9,43 @@
   <meta name="description" content="Vipul Raokale is a Senior AI Systems & Multi-Cloud Engineer building production-grade AI applications, agentic workflows, custom RAG systems, and cloud infrastructure across AWS, Azure, and GCP." />
   <meta name="author" content="Vipul Raokale" />
 
-  <link rel="canonical" href="https://vipulraokale.com/" />
+  <link rel="canonical" href="https://vipulraokale.in/" />
 
-  <!-- Fonts -->
+  <!-- Google Fonts: Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
+  <!-- FontAwesome Icons for clean UI accents -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              bg: '#f6f6f4',
+              card: '#fcfcfb',
+              cardHover: '#ffffff',
+              border: '#e2e2e0',
+              dark: '#0f0f0f',
+              muted: '#555555',
+              dim: '#777777',
+              accent: '#2563eb'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     :root {
       --bg-main: #f6f6f4;
@@ -23,676 +53,494 @@
       --bg-card-hover: #ffffff;
       --border-color: #e2e2e0;
       --text-dark: #0f0f0f;
-      --text-main: #111111;
       --text-muted: #555555;
       --text-dim: #777777;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-main);
-      color: var(--text-main);
+      color: var(--text-dark);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* HEADER / NAV */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(246, 246, 244, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-    }
-    .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-    }
-    .brand {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--text-dark);
-      text-decoration: none;
-    }
-    .brand span { color: var(--text-muted); }
-    .nav-links { display: flex; gap: 24px; list-style: none; }
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text-dark); }
-
-    /* HERO SECTION */
-    .hero {
-      padding: 90px 0 60px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .hero-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-    .hero-title {
-      font-size: 3.2rem;
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      color: var(--text-dark);
-      margin-bottom: 20px;
-    }
-    .hero-subtitle {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      max-width: 580px;
-    }
-
-    .btn-group { display: flex; gap: 16px; }
-    .btn {
-      padding: 12px 24px;
-      border-radius: 4px;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: all 0.2s;
-    }
-    .btn-primary {
-      background: var(--text-dark);
-      color: #ffffff;
-      border: 1px solid var(--text-dark);
-    }
-    .btn-primary:hover { opacity: 0.9; }
-    .btn-secondary {
-      background: #ffffff;
-      color: var(--text-dark);
-      border: 1px solid var(--border-color);
-    }
-    .btn-secondary:hover { background: #f0f0ed; }
-
-    /* PROFILE SIDE CARD */
-    .hero-profile-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 36px;
-      border-radius: 4px;
-    }
-
-    /* BENTO GRID MATRIX STYLING */
-    .skills-section {
-      padding: 80px 0;
-    }
-
-    .skills-header {
-      margin-bottom: 40px;
-    }
-
-    .skills-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-
-    .skills-title {
-      font-size: 3rem;
-      font-weight: 600;
-      letter-spacing: -1.5px;
-      color: var(--text-dark);
-      line-height: 1.1;
-    }
-
-    .bento-grid {
+    /* Subtle Bento Grid Lines Illusion */
+    .bento-grid-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: minmax(280px, auto);
-      border: 1px solid var(--border-color);
-      background-color: var(--border-color); /* Grid border line illusion */
-      gap: 1px;
+      gap: 16px;
     }
 
-    .bento-card {
-      background-color: var(--bg-card);
-      padding: 36px 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background-color 0.2s ease;
+    @media (max-width: 1024px) {
+      .bento-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    .bento-card:hover {
-      background-color: var(--bg-card-hover);
-    }
-
-    .bento-featured {
-      grid-row: span 2; /* Double height card as shown in reference */
-      background-color: #fbfbf9;
-    }
-
-    .bento-icon {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-dark);
-      background-color: #ffffff;
-      margin-bottom: 24px;
-    }
-
-    .bento-card-title {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      letter-spacing: -0.3px;
-      margin-bottom: 12px;
-    }
-
-    .bento-card-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 28px;
-    }
-
-    .bento-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .bento-tag {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.5px;
-      color: #444444;
-      background-color: #ffffff;
-      border: 1px solid #e0e0dc;
-      padding: 6px 10px;
-      border-radius: 2px;
-      text-transform: uppercase;
-    }
-
-    /* TIMELINE SECTION */
-    .timeline-section {
-      padding: 80px 0;
-      border-top: 1px solid var(--border-color);
-    }
-    .timeline { display: flex; flex-direction: column; gap: 24px; }
-    .timeline-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 32px;
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 24px;
-    }
-    .timeline-role { font-weight: 700; font-size: 1.1rem; color: var(--text-dark); }
-    .timeline-company { color: var(--text-muted); font-weight: 600; font-size: 0.95rem; }
-    .timeline-date { font-family: 'JetBrains Mono', monospace; color: var(--text-dim); font-size: 0.8rem; margin-top: 6px; }
-    .timeline-points { padding-left: 18px; color: var(--text-muted); font-size: 0.95rem; }
-    .timeline-points li { margin-bottom: 8px; }
-
-    /* CONTACT SECTION */
-    .contact-section {
-      padding: 80px 0;
-      border-top: 1px solid var(--border-color);
-    }
-    .contact-wrapper {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 48px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 0.85rem; margin-bottom: 8px; color: var(--text-muted); font-weight: 500; }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      color: var(--text-dark);
-      font-family: inherit;
-    }
-    .form-group input:focus, .form-group textarea:focus {
-      outline: none;
-      border-color: var(--text-dark);
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 40px 0;
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      color: var(--text-dim);
-      font-size: 0.85rem;
-    }
-
-    /* RESPONSIVE LAYOUT */
-    @media (max-width: 992px) {
-      .bento-grid { grid-template-columns: repeat(2, 1fr); }
-      .bento-featured { grid-row: span 1; }
-      .hero, .contact-wrapper, .timeline-card { grid-template-columns: 1fr; }
-    }
     @media (max-width: 640px) {
-      .bento-grid { grid-template-columns: 1fr; }
-      .skills-title, .hero-title { font-size: 2.2rem; }
+      .bento-grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Custom Card Hover Effects */
+    .bento-card {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .bento-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
+
+    /* Pulse status dot */
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+      }
+      70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+      }
+      100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
     }
   </style>
 </head>
-<body>
+<body class="bg-brand-bg text-brand-dark flex flex-col min-h-screen">
 
-  <!-- NAVBAR -->
-  <header>
-    <div class="container nav-wrapper">
-      <a href="#" class="brand">VIPUL RAOKALE</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <header class="sticky top-0 z-50 bg-[#f6f6f4]/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="font-extrabold text-lg tracking-tight text-brand-dark hover:opacity-80 transition-opacity">
+        VIPUL RAOKALE<span class="text-brand-dim font-light ml-2 text-sm hidden sm:inline-block">/ AI Systems & Cloud</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">About</a>
+        <a href="#skills" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">Skills</a>
+        <a href="#experience" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">Experience</a>
+        <a href="#contact" class="text-sm font-medium text-brand-muted hover:text-brand-dark transition-colors">Contact</a>
+        <a href="#contact" class="px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-brand-dark rounded hover:bg-black transition-colors">
+          Get in Touch
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="menu-toggle" class="md:hidden text-brand-dark focus:outline-none p-2" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-brand-border bg-brand-bg px-6 py-4 flex flex-col space-y-4">
+      <a href="#about" class="mobile-link text-sm font-medium text-brand-muted hover:text-brand-dark">About</a>
+      <a href="#skills" class="mobile-link text-sm font-medium text-brand-muted hover:text-brand-dark">Skills</a>
+      <a href="#experience" class="mobile-link text-sm font-medium text-brand-muted hover:text-brand-dark">Experience</a>
+      <a href="#contact" class="mobile-link text-sm font-medium text-brand-muted hover:text-brand-dark">Contact</a>
     </div>
   </header>
 
-  <main class="container">
-    
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div>
-        <div class="hero-label">— AI Systems & Multi-Cloud</div>
-        <h1 class="hero-title">Vipul Raokale</h1>
-        <p class="hero-subtitle">
-          Building production-grade AI applications, agentic workflows, custom RAG systems, and cloud infrastructure across AWS, Azure, and GCP[cite: 1].
+  <!-- MAIN CONTENT -->
+  <main class="max-w-6xl mx-auto px-6 flex-grow w-full">
+
+    <section class="py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" id="about">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-brand-muted uppercase">
+          <span class="status-dot"></span>
+          <span>AI Systems & Multi-Cloud</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-dark leading-tight">
+          Vipul Raokale
+        </h1>
+
+        <p class="text-lg sm:text-xl text-brand-muted leading-relaxed max-w-2xl font-normal">
+          Building production-grade AI applications, agentic workflows, custom RAG systems, and cloud infrastructure across AWS, Azure, and GCP.
         </p>
 
-        <div class="btn-group">
-          <a href="#contact" class="btn btn-primary">Get In Touch</a>
-          <a href="#skills" class="btn btn-secondary">View Technical Stack</a>
+        <div class="pt-4 flex flex-wrap gap-4">
+          <a href="#contact" class="px-6 py-3 bg-brand-dark text-white font-semibold text-sm rounded border border-brand-dark hover:bg-neutral-800 transition-all shadow-sm">
+            Initiate Collaboration
+          </a>
+          <a href="#skills" class="px-6 py-3 bg-white text-brand-dark font-semibold text-sm rounded border border-brand-border hover:bg-neutral-100 transition-all">
+            Explore Stack
+          </a>
         </div>
       </div>
 
-      <div class="hero-profile-card">
-        <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 6px;">AI Systems Architect</h3>
-        <p style="color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-bottom: 16px;">Consultant @ KPMG Global Services[cite: 1]</p>
-        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5;">
-          Over 5 years of engineering experience spanning multi-cloud infrastructure, LLM pipelines, microservices, and cross-platform applications[cite: 1].
-        </p>
+      <!-- Hero Profile Side Card -->
+      <div class="lg:col-span-5">
+        <div class="bg-brand-card border border-brand-border rounded-lg p-8 shadow-sm space-y-5 relative">
+          <div class="flex justify-between items-start border-b border-brand-border pb-4">
+            <div>
+              <h2 class="font-bold text-xl text-brand-dark">AI Systems Architect</h2>
+              <p class="text-xs font-mono text-brand-muted mt-1">Consultant @ KPMG Global Services</p>
+            </div>
+            <span class="p-2 bg-neutral-100 rounded text-brand-dark text-lg">
+              <i class="fa-solid fa-microchip"></i>
+            </span>
+          </div>
+
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Over 5 years of engineering experience spanning multi-cloud infrastructure, LLM pipelines, microservices, and cross-platform applications.
+          </p>
+
+          <div class="pt-2 flex flex-col space-y-2 font-mono text-xs text-brand-dim">
+            <div class="flex items-center gap-2">
+              <i class="fa-regular fa-envelope text-brand-muted w-4"></i>
+              <a href="mailto:vipulraokale2399@gmail.com" class="hover:underline text-brand-dark">vipulraokale2399@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-brand-muted w-4"></i>
+              <a href="tel:+918668591702" class="hover:underline text-brand-dark">+91 8668591702</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SKILLS SECTION: BENTO GRID MATRIX -->
-    <section id="skills" class="skills-section">
-      <div class="skills-header">
-        <div class="skills-label">— SKILLS</div>
-        <h2 class="skills-title">Where the depth actually is.</h2>
+    <section id="skills" class="py-16 border-t border-brand-border">
+      <div class="mb-10">
+        <div class="font-mono text-xs tracking-widest text-brand-muted uppercase mb-2">// CAPABILITIES MATRIX</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">Where the depth actually is.</h2>
       </div>
 
-      <div class="bento-grid">
-        
-        <!-- 1. AI Systems (Double-Height Featured Card) -->
-        <div class="bento-card bento-featured">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 3v3m0 12v3M3 12h3m12 0h3m-3.5-6.5l-2.1 2.1m-8.8 8.8l-2.1 2.1m13 0l-2.1-2.1M6.4 6.4L4.3 4.3" />
-              </svg>
+      <div class="bento-grid-container">
+
+        <!-- 1. AI Systems (Double-Height / Featured Card) -->
+        <div class="lg:row-span-2 bento-card bg-brand-card border border-brand-border rounded-lg p-8 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-xl mb-6 shadow-xs">
+              <i class="fa-solid fa-brain"></i>
             </div>
-          </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">AI Systems</h3>
-            <p class="bento-card-desc">
-              Retrieval-augmented and multi-agent systems designed to hold up in production, not just in a demo[cite: 3].
+            <span class="inline-block px-2.5 py-1 mb-3 bg-neutral-100 border border-neutral-200 text-brand-dark font-mono text-[10px] tracking-wider uppercase font-semibold rounded">
+              FEATURED CORE
+            </span>
+            <h3 class="text-2xl font-bold text-brand-dark tracking-tight mb-3">AI Systems</h3>
+            <p class="text-sm text-brand-muted leading-relaxed mb-6">
+              Retrieval-augmented generation (RAG) and multi-agent systems designed for resilience, low latency, and enterprise accuracy in production.
             </p>
-            <div class="bento-tags">
-              <span class="bento-tag">RAG</span>
-              <span class="bento-tag">PROMPT ENGINEERING</span>
-              <span class="bento-tag">EVALS</span>
-            </div>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-4">
+            <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded">RAG</span>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded">PROMPT ENGINEERING</span>
+            <span class="font-mono text-[11px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-3 py-1.5 rounded">EVALS</span>
           </div>
         </div>
 
         <!-- 2. LLMs -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M8 10h8M8 14h5M4 6h16a2 2 0 012 2v8a2 2 0 01-2 2H7l-4 4V8a2 2 0 012-2z" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-comments"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">LLMs</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Frontier model APIs and orchestration frameworks for scalable intelligence.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">LLMs</h3>
-            <p class="bento-card-desc">
-              Frontier model APIs and the frameworks that orchestrate them[cite: 3].
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">AZURE OPENAI</span>
-              <span class="bento-tag">OPENAI</span>
-              <span class="bento-tag">LANGCHAIN</span>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">AZURE OPENAI</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">OPENAI</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">LANGCHAIN</span>
           </div>
         </div>
 
         <!-- 3. Cloud -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M3 15a4 4 0 004 4h11a3 3 0 00.8-5.9 5 5 0 00-9.8-1.7A3.5 3.5 0 003 15z" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-cloud"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Cloud</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Multi-cloud architecture across the three major hyperscale providers.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">Cloud</h3>
-            <p class="bento-card-desc">
-              Multi-cloud infrastructure across the three major providers[cite: 3].
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">AWS</span>
-              <span class="bento-tag">GCP</span>
-              <span class="bento-tag">AZURE</span>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">AWS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">GCP</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">AZURE</span>
           </div>
         </div>
 
         <!-- 4. Agentic AI -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-diagram-project"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Agentic AI</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Multi-agent workflows constructed as stateful graphs rather than linear prompts.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">Agentic AI</h3>
-            <p class="bento-card-desc">
-              Multi-agent workflows built as real state machines, not chained prompts[cite: 3].
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">LANGGRAPH</span>
-              <span class="bento-tag">CREWAI</span>
-              <span class="bento-tag">FASTMCP</span>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">LANGGRAPH</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">CREWAI</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">FASTMCP</span>
           </div>
         </div>
 
         <!-- 5. Infrastructure -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-server"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Infrastructure</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Infrastructure as Code (IaC), containerization, and orchestration at scale.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">Infrastructure</h3>
-            <p class="bento-card-desc">
-              Infrastructure as code, containers, and orchestration at scale[cite: 3].
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">TERRAFORM</span>
-              <span class="bento-tag">DOCKER</span>
-              <span class="bento-tag">KUBERNETES</span>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">TERRAFORM</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">DOCKER</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">KUBERNETES</span>
           </div>
         </div>
 
         <!-- 6. DevOps -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-gears"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">DevOps & FinOps</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">CI/CD pipelines and cloud cost optimization practices for sustainable shipping.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">DevOps</h3>
-            <p class="bento-card-desc">
-              CI/CD and FinOps practices that keep systems shippable and affordable[cite: 3].
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">GITHUB ACTIONS</span>
-              <span class="bento-tag">FINOPS</span>
-              <span class="bento-tag">CLOUDOPS</span>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">GITHUB ACTIONS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">FINOPS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">CLOUDOPS</span>
           </div>
         </div>
 
         <!-- 7. Programming -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-code"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Programming</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Strong foundational polyglot languages for core application engineering.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">Programming</h3>
-            <p class="bento-card-desc">
-              The language-level foundation everything else is built on[cite: 3].
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">PYTHON</span>
-              <span class="bento-tag">C#</span>
-              <span class="bento-tag">TYPESCRIPT</span>
-              <span class="bento-tag">JAVA</span>
-              <span class="bento-tag">SQL</span>
-              <span class="bento-tag">SHELL / YAML</span>
-            </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">PYTHON</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">C#</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">TYPESCRIPT</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">JAVA</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SQL</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SHELL / YAML</span>
           </div>
         </div>
 
         <!-- 8. Mobile Engineering -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-                <line x1="12" y1="18" x2="12.01" y2="18" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-mobile-screen"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Mobile Engineering</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Cross-platform native apps designed for performance and reliable state.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">Mobile Engineering</h3>
-            <p class="bento-card-desc">
-              Cross-platform native applications designed for smooth performance and offline state management.
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">FLUTTER</span>
-              <span class="bento-tag">DART</span>
-              <span class="bento-tag">REACT NATIVE</span>
-              <span class="bento-tag">SWIFTUI</span>
-            </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FLUTTER</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">DART</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">REACT NATIVE</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SWIFTUI</span>
           </div>
         </div>
 
         <!-- 9. Web & Backends -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                <line x1="8" y1="21" x2="16" y2="21" />
-                <line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-[#000]"></i>
+              <i class="fa-solid fa-cubes"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Web & Backends</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">High-throughput microservices and responsive web platforms.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">Web & Backends</h3>
-            <p class="bento-card-desc">
-              High-throughput APIs and responsive web interfaces optimized for enterprise scalability.
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">.NET CORE</span>
-              <span class="bento-tag">FASTAPI</span>
-              <span class="bento-tag">REACT</span>
-              <span class="bento-tag">NEXT.JS</span>
-              <span class="bento-tag">NODE.JS</span>
-            </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">.NET CORE</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FASTAPI</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">REACT</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">NEXT.JS</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">NODE.JS</span>
           </div>
         </div>
 
-        <!-- 10. Databases & Storage -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <ellipse cx="12" cy="5" rx="9" ry="3" />
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-              </svg>
+        <!-- 10. Databases -->
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-database"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">Databases & Storage</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Relational, document, and real-time cloud database storage systems.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">Databases</h3>
-            <p class="bento-card-desc">
-              Relational and document storage solutions for structured data and real-time cloud datastores.
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">POSTGRESQL</span>
-              <span class="bento-tag">SQL SERVER</span>
-              <span class="bento-tag">MONGODB</span>
-              <span class="bento-tag">FIREBASE</span>
-            </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">POSTGRESQL</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">SQL SERVER</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">MONGODB</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2 py-0.5 rounded">FIREBASE</span>
           </div>
         </div>
 
         <!-- 11. APIs & Integration -->
-        <div class="bento-card">
-          <div class="bento-top">
-            <div class="bento-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
-                <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
-              </svg>
+        <div class="bento-card bg-brand-card border border-brand-border rounded-lg p-7 flex flex-col justify-between lg:col-span-2">
+          <div>
+            <div class="w-10 h-10 bg-white border border-brand-border rounded-lg flex items-center justify-center text-brand-dark text-lg mb-5 shadow-xs">
+              <i class="fa-solid fa-network-wired"></i>
             </div>
+            <h3 class="text-xl font-bold text-brand-dark mb-2">APIs & Integrations</h3>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">Standardized contract definitions, gateways, and tooling for multi-service ecosystems.</p>
           </div>
-          <div class="bento-body">
-            <h3 class="bento-card-title">APIs & Integrations</h3>
-            <p class="bento-card-desc">
-              Standardized contracts, gateways, and tooling for robust multi-service communication.
-            </p>
-            <div class="bento-tags">
-              <span class="bento-tag">REST</span>
-              <span class="bento-tag">GRAPHQL</span>
-              <span class="bento-tag">OPENAPI</span>
-              <span class="bento-tag">POSTMAN</span>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">REST</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">GRAPHQL</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">OPENAPI</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-brand-muted bg-white border border-brand-border px-2.5 py-1 rounded">POSTMAN</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="timeline-section">
-      <div class="skills-header">
-        <div class="skills-label">— CAREER TRACK</div>
-        <h2 class="skills-title">Professional Experience</h2>
+    <section id="experience" class="py-16 border-t border-brand-border">
+      <div class="mb-12">
+        <div class="font-mono text-xs tracking-widest text-brand-muted uppercase mb-2">// CAREER TRACK</div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">Professional Experience</h2>
       </div>
 
-      <div class="timeline">
-        <div class="timeline-card">
-          <div>
-            <div class="timeline-role">Consultant</div>
-            <div class="timeline-company">KPMG Global Services</div>
-            <div class="timeline-date">Sep 2024 — Present[cite: 1]</div>
+      <div class="space-y-8">
+        
+        <!-- Experience Item 1 -->
+        <div class="bg-brand-card border border-brand-border rounded-lg p-8 grid grid-cols-1 md:grid-cols-12 gap-6 shadow-sm">
+          <div class="md:col-span-4 space-y-1">
+            <h3 class="font-bold text-lg text-brand-dark">Consultant</h3>
+            <p class="text-brand-muted text-sm font-medium">KPMG Global Services</p>
+            <p class="font-mono text-xs text-brand-dim pt-2">Sep 2024 — Present</p>
           </div>
-          <ul class="timeline-points">
-            <li>Architect multi-cloud container infrastructures across AWS, Azure, and Google Cloud Platform[cite: 1].</li>
-            <li>Engineer automated CI/CD deployment pipelines and provision infrastructure via Terraform[cite: 1].</li>
-            <li>Integrate production LLM workflows, RAG applications, and AI assistant tools into enterprise systems.</li>
-          </ul>
+          <div class="md:col-span-8">
+            <ul class="space-y-3 text-sm text-brand-muted list-disc list-inside">
+              <li class="leading-relaxed">Architect multi-cloud container infrastructures across AWS, Azure, and Google Cloud Platform.</li>
+              <li class="leading-relaxed">Engineer automated CI/CD deployment pipelines and provision enterprise infrastructure via Terraform.</li>
+              <li class="leading-relaxed">Integrate production LLM workflows, custom RAG applications, and AI assistant tools into client environments.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="timeline-card">
-          <div>
-            <div class="timeline-role">Associate Consultant</div>
-            <div class="timeline-company">Infosys Limited</div>
-            <div class="timeline-date">Jun 2022 — Aug 2024[cite: 1]</div>
+        <!-- Experience Item 2 -->
+        <div class="bg-brand-card border border-brand-border rounded-lg p-8 grid grid-cols-1 md:grid-cols-12 gap-6 shadow-sm">
+          <div class="md:col-span-4 space-y-1">
+            <h3 class="font-bold text-lg text-brand-dark">Associate Consultant</h3>
+            <p class="text-brand-muted text-sm font-medium">Infosys Limited</p>
+            <p class="font-mono text-xs text-brand-dim pt-2">Jun 2022 — Aug 2024</p>
           </div>
-          <ul class="timeline-points">
-            <li>Spearheaded cloud migration strategies and automated microservice deployment for major financial client systems[cite: 1].</li>
-            <li>Built resilient CI/CD pipelines using GitLab CI and Azure DevOps to reduce deployment overhead[cite: 1].</li>
-          </ul>
+          <div class="md:col-span-8">
+            <ul class="space-y-3 text-sm text-brand-muted list-disc list-inside">
+              <li class="leading-relaxed">Spearheaded cloud migration strategies and automated microservice deployment for financial client systems.</li>
+              <li class="leading-relaxed">Built resilient CI/CD pipelines using GitLab CI and Azure DevOps to minimize deployment overhead.</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-      <div class="contact-wrapper">
-        <div>
-          <h2 style="font-size: 1.8rem; margin-bottom: 16px; font-weight: 600;">Initiate a Collaboration</h2>
-          <p style="color: var(--text-muted); margin-bottom: 24px;">
-            Whether you need custom AI agent integration, cloud architecture, or full-stack platform development, feel free to reach out.
+    <section id="contact" class="py-16 border-t border-brand-border mb-12">
+      <div class="bg-brand-card border border-brand-border rounded-lg p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-12 shadow-sm">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <div class="font-mono text-xs tracking-widest text-brand-muted uppercase mb-2">// CONTACT</div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark tracking-tight">Initiate a Collaboration</h2>
+          </div>
+
+          <p class="text-sm text-brand-muted leading-relaxed">
+            Whether you need custom AI agent integration, cloud infrastructure architecture, or full-stack platform development, feel free to drop a message.
           </p>
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; margin-bottom: 8px;">
-            📧 <a href="mailto:vipulraokale2399@gmail.com" style="color: var(--text-dark); text-decoration: underline;">vipulraokale2399@gmail.com</a>[cite: 1]
-          </p>
-          <p style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
-            📞 <a href="tel:+918668591702" style="color: var(--text-dark); text-decoration: underline;">+91 8668591702</a>[cite: 1]
-          </p>
+
+          <div class="space-y-3 font-mono text-xs pt-2">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-white border border-brand-border flex items-center justify-center text-brand-dark">
+                <i class="fa-regular fa-envelope"></i>
+              </div>
+              <a href="mailto:vipulraokale2399@gmail.com" class="text-brand-dark underline hover:opacity-80">vipulraokale2399@gmail.com</a>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded bg-white border border-brand-border flex items-center justify-center text-brand-dark">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <a href="tel:+918668591702" class="text-brand-dark underline hover:opacity-80">+91 8668591702</a>
+            </div>
+          </div>
         </div>
 
-        <form action="https://formspree.io/f/xaenbjgd" method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your Name" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required placeholder="Describe your project or requirement..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer;">Send Message</button>
-        </form>
+        <div class="lg:col-span-7">
+          <form action="https://formspree.io/f/xaenbjgd" method="POST" class="space-y-5">
+            <div>
+              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-brand-muted mb-2">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your Name" class="w-full px-4 py-3 bg-white border border-brand-border rounded text-sm text-brand-dark focus:outline-none focus:border-brand-dark transition-colors" />
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-brand-muted mb-2">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com" class="w-full px-4 py-3 bg-white border border-brand-border rounded text-sm text-brand-dark focus:outline-none focus:border-brand-dark transition-colors" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-brand-muted mb-2">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Describe your project requirement or discussion topic..." class="w-full px-4 py-3 bg-white border border-brand-border rounded text-sm text-brand-dark focus:outline-none focus:border-brand-dark transition-colors"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 bg-brand-dark text-white font-semibold text-sm rounded hover:bg-black transition-colors shadow-sm">
+              Send Message
+            </button>
+          </form>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© Vipul Raokale. AI Systems, Application Development & Multi-Cloud Architecture.</p>
+  <footer class="border-t border-brand-border py-8 text-center text-xs text-brand-dim font-mono">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p>© Vipul Raokale — AI Systems & Multi-Cloud Architecture.</p>
+      <p>Domain: <a href="https://vipulraokale.in" class="hover:underline text-brand-muted">vipulraokale.in</a></p>
     </div>
   </footer>
 
+  <script>
+    // Mobile navigation toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
